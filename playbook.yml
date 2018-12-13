@@ -1,0 +1,36 @@
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+      - name: create a security group in us-east-2
+        ec2_group:
+          name: sed_security_group
+          description: an example ec2 group
+          region: us-east-2
+          aws_access_key: "AKIAIPT4UFTDCFZ63K4A"
+          aws_secret_key: "8w6Rm0TAaThvKClesTDBXrxokjbIAtxKHJw8v5xc"
+          rules:
+            - proto: tcp
+              from_port: 80
+              to_port: 80
+              cidr_ip: 0.0.0.0/0
+            - proto: tcp
+              from_port: 22
+              to_port: 22
+              cidr_ip: 0.0.0.0/0
+        register: security_group
+
+      - name: create ec2 instance
+        ec2:
+          key_name: ubuntu_test
+          region: us-east-2
+          aws_access_key: "AKIAIPT4UFTDCFZ63K4A"
+          aws_secret_key: "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"
+          image: ami-0cd3dfa4e37921605
+          instance_type: t2.micro
+          wait: yes
+          group: sed_security_group
+          count_tag:
+            Name: apacheserver
+          exact_count: 1
+        register: ec2
