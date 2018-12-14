@@ -7,8 +7,8 @@
           name: sed_security_group
           description: an example ec2 group
           region: us-east-2
-          aws_access_key: "AKIAIPT4UFTDCFZ63K4A"
-          aws_secret_key: "8w6Rm0TAaThvKClesTDBXrxokjbIAtxKHJw8v5xc"
+          aws_access_key: "xxxxxxxxxxxxxxxxxxxxxx"
+          aws_secret_key: "xxxxxxxxxxxxxxxxxxxxxokjbIAtxKHJw8v5xc"
           rules:
             - proto: tcp
               from_port: 80
