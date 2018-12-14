@@ -11,4 +11,4 @@ credit card.py uses regular expression to check if it matches the pattern, if it
 
 #Ansible playbook.yml
 
-In the playbook.yml
+In the playbook.yml it creates a security group  named sed_security_group, it creates an ec2 instance with ami image and instance type t2.micro. once the instance type is launched install tomcat server and deploy the index.html to bin files
