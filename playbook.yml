@@ -24,8 +24,8 @@
         ec2:
           key_name: ubuntu_test
           region: us-east-2
-          aws_access_key: "AKIAIPT4UFTDCFZ63K4A"
-          aws_secret_key: "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"
+          aws_access_key: "xxxxxxxxxxxxxxxxxxxxxxxx"
+          aws_secret_key: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           image: ami-0cd3dfa4e37921605
           instance_type: t2.micro
           wait: yes
